@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Green Tip</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <!-- Lightweight styling framework (optional) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css" />
+  <style>
+    /* 🔧 Tweak any of these rules to match your branding */
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 1rem;
+      text-align: center;
+    }
+
+    #logo {
+      max-width: 180px; /* adjust as needed */
+      margin-bottom: 1.5rem;
+    }
+
+    #tip {
+      font-size: 1.5rem;
+      font-weight: 600;
+    }
+  </style>
+</head>
+<body>
+  <!-- 🎓 YSJ official logo: replace `ysj_logo.png` with the actual path/filename -->
+  <img id="logo" src="ysj_logo.png" alt="York St John University logo" />
+
+  <h1>Random YSJ Sustainability Tip</h1>
+  <p id="tip"></p>
+
+  <!-- 📣 Call‑to‑action for users to contribute their own tips -->
+  <h2 style="margin-top:2rem;">
+    <a href="https://forms.office.com/e/zXRSNpzr5c" target="_blank" rel="noopener">
+      Share your own sustainability tips and we'll add them to this QR code
+    </a>
+  </h2>
+
+  <footer>
+    <small>
+      &copy; <span id="year"></span> York St John University • More at
+      <a href="https://www.yorksj.ac.uk/sustainability" target="_blank" rel="noopener">ysj.ac.uk</a>
+    </small>
+  </footer>
+
+  <script>
+    /**
+     * ✍️  Edit the array below to add your own tips.
+     * Pro‑tip: later you can swap this for a fetch() call to load tips
+     * from an external JSON file or API for easy maintenance.
+     */
+    const tips = [
+      "Read some inspiring and entertaining eco-lit. You can borrow a copy of Richard Powers, Playground - winner of Pulitzer Prize (2024). Find it in our Relaxed Reads section: Ground Floor 813.6/POW",
+      "To reduce their food-waste, YSJ Kitchen sells heavily discounted goody bags of unsold food around the late afternoon. You can reserve your goody bag through third-party apps.",
+      "Buy second-hand rather than using that rainforest e-commerce website.",
+      "Join our Grounds Team on our main York campus for Wild Wednesdays gardening activities. This is a great way to meet fellow garden goers and to learn about gardening. We meet every Wednesday at 12:00pm to 2:00pm. Meeting point: Outside the Students' Union building on the right hand side (nearest to Temple building where there are small planters). Look out for the Wild Wednesday sign!",
+      "Bin your butts. Cigarettes are made of plastic and contain more than 7,000 chemicals. One cigarette butt can contaminate up to 1,000 litres of water and the butts can be ingested by wildlife.",
+      "The lifecycle of a plastic bottle is 450 years. So put your plastic bottles in the recycling bins. We have water fountains on the ground and first floors where you can refill reusable bottles.",
+      "If you are boiling vegetables in water (with no salt added), don’t throw away the water. Let it cool down and use it as fertiliser on plants in your garden.",
+      "Don’t pour hot oil from your fry pan down the drain. It will combine with non‑biodegradable materials like wet wipes and turn into a ‘fatberg’, blocking up the sewers.",
+      "Be mindful of digital waste. Did you know storing 100 GB of data in the cloud generates around 0.2 tonnes of CO₂ a year? That’s the equivalent of driving over 888 miles in a car."
+    ];
+
+    // 🎲 Pick a random tip
+    const randomTip = tips[Math.floor(Math.random() * tips.length)];
+    document.getElementById("tip").textContent = randomTip;
+
+    // 📅 Keep the copyright year current
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
